@@ -5265,7 +5265,7 @@ void Interface_DrawItemButtons(PlayState* play) {
     OVERLAY_DISP = Gfx_DrawTexRectIA8_DropShadow(
         OVERLAY_DISP, gButtonBackgroundTex, 0x20, 0x20, D_801BF9D4[EQUIP_SLOT_B], D_801BF9DC[EQUIP_SLOT_B],
         D_801BFAF4[EQUIP_SLOT_B], D_801BFAF4[EQUIP_SLOT_B], D_801BF9E4[EQUIP_SLOT_B] * 2, D_801BF9E4[EQUIP_SLOT_B] * 2,
-        100, 255, 120, interfaceCtx->bAlpha);
+        208,66,66, interfaceCtx->bAlpha);
     gDPPipeSync(OVERLAY_DISP++);
 
     // C-Left Button Color & Texture
@@ -5278,14 +5278,12 @@ void Interface_DrawItemButtons(PlayState* play) {
     HudEditor_SetActiveElement(HUD_EDITOR_ELEMENT_C_DOWN);
     OVERLAY_DISP = Gfx_DrawRect_DropShadow(OVERLAY_DISP, D_801BF9D4[EQUIP_SLOT_C_DOWN], D_801BF9DC[EQUIP_SLOT_C_DOWN],
                                            D_801BFAF4[EQUIP_SLOT_C_DOWN], D_801BFAF4[EQUIP_SLOT_C_DOWN],
-                                           D_801BF9E4[EQUIP_SLOT_C_DOWN] * 2, D_801BF9E4[EQUIP_SLOT_C_DOWN] * 2, 255,
-                                           240, 0, interfaceCtx->cDownAlpha);
+                                           D_801BF9E4[EQUIP_SLOT_C_DOWN] * 2, D_801BF9E4[EQUIP_SLOT_C_DOWN] * 2, 64,204,208, interfaceCtx->cDownAlpha);
     // C-Right Button Color & Texture
     HudEditor_SetActiveElement(HUD_EDITOR_ELEMENT_C_RIGHT);
     OVERLAY_DISP = Gfx_DrawRect_DropShadow(OVERLAY_DISP, D_801BF9D4[EQUIP_SLOT_C_RIGHT], D_801BF9DC[EQUIP_SLOT_C_RIGHT],
                                            D_801BFAF4[EQUIP_SLOT_C_RIGHT], D_801BFAF4[EQUIP_SLOT_C_RIGHT],
-                                           D_801BF9E4[EQUIP_SLOT_C_RIGHT] * 2, D_801BF9E4[EQUIP_SLOT_C_RIGHT] * 2, 255,
-                                           240, 0, interfaceCtx->cRightAlpha);
+                                           D_801BF9E4[EQUIP_SLOT_C_RIGHT] * 2, D_801BF9E4[EQUIP_SLOT_C_RIGHT] * 2, 236,219,51, interfaceCtx->cRightAlpha);
 
     if (!IS_PAUSE_STATE_GAMEOVER) {
         if ((play->pauseCtx.state != PAUSE_STATE_OFF) || (play->pauseCtx.debugEditor != DEBUG_EDITOR_NONE)) {
@@ -5406,9 +5404,9 @@ void Interface_DrawItemButtons(PlayState* play) {
             if (temp == EQUIP_SLOT_C_LEFT) {
                 gDPSetPrimColor(OVERLAY_DISP++, 0, 0, 255, 240, 0, interfaceCtx->cLeftAlpha);
             } else if (temp == EQUIP_SLOT_C_DOWN) {
-                gDPSetPrimColor(OVERLAY_DISP++, 0, 0, 255, 240, 0, interfaceCtx->cDownAlpha);
+                gDPSetPrimColor(OVERLAY_DISP++, 0, 0, 64,204,208, interfaceCtx->cDownAlpha);
             } else { // EQUIP_SLOT_C_RIGHT
-                gDPSetPrimColor(OVERLAY_DISP++, 0, 0, 255, 240, 0, interfaceCtx->cRightAlpha);
+                gDPSetPrimColor(OVERLAY_DISP++, 0, 0, 236,219,51, interfaceCtx->cRightAlpha);
             }
             HudEditor_SetActiveElement(temp);
             OVERLAY_DISP = Gfx_DrawTexRectIA8(OVERLAY_DISP, emptyCButtonArrows[temp - 1], 0x20, 0x20, D_801BF9D4[temp],
@@ -5954,7 +5952,7 @@ void Interface_DrawAButton(PlayState* play) {
     gDPPipeSync(OVERLAY_DISP++);
     Interface_SetPerspectiveView(play, 23 + R_A_BTN_Y_OFFSET, 68 + R_A_BTN_Y_OFFSET, 190, 235);
     gSPVertex(OVERLAY_DISP++, &interfaceCtx->actionVtx[0], 4, 0);
-    gDPSetPrimColor(OVERLAY_DISP++, 0, 0, 100, 200, 255, interfaceCtx->aAlpha);
+    gDPSetPrimColor(OVERLAY_DISP++, 0, 0, 60,219,78, interfaceCtx->aAlpha);
     gSP1Quadrangle(OVERLAY_DISP++, 0, 2, 3, 1, 0);
 
     // Draw A Button Do-Action
