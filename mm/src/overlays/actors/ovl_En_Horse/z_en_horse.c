@@ -3991,14 +3991,14 @@ void EnHorse_UpdateBgCheckInfo(EnHorse* this, PlayState* play) {
 
         if ((horseGameCheck == NULL) || (horseGameCheck->actor.id != ACTOR_EN_HORSE_GAME_CHECK) ||
             ((horseGameCheck->actor.params & 0xFF) != 5)) {
-            if ((movingFast == false) && ((19.0f * temp_f0) < obstacleHeight) &&
+            if (/*(movingFast == false) &&*/ ((19.0f * temp_f0) < obstacleHeight) &&
                 (obstacleHeight <= (40.0f * temp_f0))) {
                 EnHorse_Stub1(this);
                 this->postDrawFunc = EnHorse_LowJumpInit;
-            } else if ((movingFast == true) &&
-                       (((this->actor.speed < 13.8f) && ((19.0f * temp_f0) < obstacleHeight) &&
+            } else if (/*(movingFast == true) &&*/
+                       ((/*(this->actor.speed < 13.8f) &&*/ ((19.0f * temp_f0) < obstacleHeight) &&
                          (obstacleHeight <= (72.0f * temp_f0))) ||
-                        ((this->actor.speed > 13.8f) && (obstacleHeight <= (112.0f * temp_f0))))) {
+                        (/*(this->actor.speed > 13.8f) &&*/ (obstacleHeight <= (112.0f * temp_f0))))) {
                 EnHorse_Stub2(this);
                 this->postDrawFunc = EnHorse_HighJumpInit;
             }

@@ -217,6 +217,16 @@ int GameInteractor_InvertControl(GIInvertType type) {
                 result *= -1;
             }
             break;
+        case GI_INVERT_FIRST_PERSON_AIM_X:
+            if (CVarGetInteger("gEnhancements.Camera.FirstPerson.InvertX", 0)) {
+                result *= -1;
+            }
+            break;
+        case GI_INVERT_FIRST_PERSON_AIM_Y:
+            if (CVarGetInteger("gEnhancements.Camera.FirstPerson.InvertY", 1)) {
+                result *= -1;
+            }
+            break;
     }
 
     /*
